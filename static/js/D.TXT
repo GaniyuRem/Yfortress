@@ -1,0 +1,68 @@
+$(document).ready(function () {
+    $successful = $("#success-box")
+    input_field = $(" #form-container").find("input,textarea")
+    $(this).parent().css('display', "hide")
+    $("#form-container").on('submit', (e) => {
+        let value_pro = []
+        e.preventDefault();
+        $.each(input_field, (index, value) => {
+            value_pro.push($(value).val())
+        });
+        $.ajax({
+
+            type: "POST",
+            data: { csrfmiddlewaretoken: value_pro[0], name: value_pro[1], email: value_pro[2], message_box: value_pro[3] },
+            success: (data, responseText, request) => {
+                if (request.status == 200) {
+                    console.log(request.status, data)
+                }
+            },
+            error: () => {
+                console.log("error")
+            }
+        });
+        $successful.css({ "display": "flex" })
+        $successful.toggle(1000, () => {
+            $successful.css({ "display": "flex", "transition": "0.5" })
+        })
+        $("#image-close").on('click', function (event) {
+            $(this).parent().css('display', "none")
+        })
+    });
+    $(".top-links li").each(function () {
+        $(this).on("click", function (e) {
+            let current = { scrollTop: 0 }
+            if ($(this).attr("id") == "vision") {
+                current["scrollTop"] = $("#main-case").offset()
+                $(".container").animate({
+                    scrollTop: $("#main-case").offset().top - 160
+                }, 800)
+            }
+            else if ($(this).attr("id") == "road-about") {
+                current["scrollTop"] = $("#key-style").offset().top - 160
+                $(".container").animate({
+                    scrollTop: $("#key-style").offset().top - 160
+                }, 2000)
+            }
+            else if ($(this).attr("id") == "road-map-link") {
+                current["scrollTop"] = $("#road-map").offset().top - 20
+                $(".container").animate({
+                    scrollTop: $("#road-map").offset().top - 20
+                }, 2500)
+            }
+            else if ($(this).attr("id") == "contact-map") {
+                current["scrollTop"] = $("#contact").offset().top
+                $(".container").animate({
+                    scrollTop: $("#contact").offset().top
+                }, 2800)
+            }
+            else {
+                console.log("lnh")
+            }
+            console.log(current["scrollTop"])
+
+        })
+    })
+});
+
+
