@@ -1,0 +1,1 @@
+web: gunicorn Yearn_fortress.wsgi
