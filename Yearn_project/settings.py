@@ -118,4 +118,4 @@ STATIC_ROOT = os.path.join(BASE_DIR,"staticfiles")
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 print("hello", STATICFILES_DIRS)
-django_heroku.settings(local())
+django_heroku.settings(locals())
