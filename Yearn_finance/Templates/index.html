@@ -1,0 +1,254 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block contentarea %}
+<div class="content-area">
+    <main class="main-content-area">
+        <section class="section-padding" id='key-style'>
+            <div class="key-feature-container">
+                <div class="key-feature-max-container">
+                    <div class="key-feature crypto-txt-title-small">
+                        <H6>Key Features</H6>
+                        <p>
+                            YFortress is packed with a multiple features that will change the way you trade and
+                            interact
+                            with DeFi platforms like
+                            Uniswap.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="max-width-container">
+                <div class="key-feature-info">
+                    <div class="main-feature-banner">
+                        <div class="main-feature-disc">
+                            <h5>Yfortress is a Farming tokens locked in locking contract. </h5>
+                            <img src="{%static '/img/locked-version.png' %}" alt="">
+                        </div>
+                        <p>
+                            15000 YFTS locked for Farming pool.
+                        </p>
+                    </div>
+
+                    <div class="main-feature-banner">
+
+                        <div class="main-feature-disc">
+                            <h5>Staking tokens locked in staking contract. </h5>
+                            <img src="{% static '/img/locked.png' %}" alt="">
+                        </div>
+                        <p>
+                            20000 YFTS to be rewarded to stakers.
+                        </p>
+                    </div>
+
+                    <div class="main-feature-banner">
+                        <div class="main-feature-disc">
+                            <h5>Uniswap Liquidity tokens locked on Unicrypt. </h5>
+                            <img src="{% static '/img/Unicrypt-Uniswap.png' %}" alt="">
+                        </div>
+                        <p>
+                            100% Locked tokens for 10 years.
+                        </p>
+                    </div>
+
+                    <div class="main-feature-banner">
+
+                        <div class="main-feature-disc">
+                            <h5>Listing on Exchanges </h5>
+                            <img src="{% static '/img/exchange.png' %}" alt="">
+                        </div>
+                        <p>
+                            YFST token to be listed in top exchanges after presale.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="key-style-title crypto-txt-title-small">
+                <p class="find-us">AWAITING EXCHANGE APPROVAL</p>
+                <div class="key-style-title-img">
+                    <img class="uni-swap" src="{% static 'img/uniswap-logo.png' %}" alt="">
+                    <img class="uni-swap" src="{% static 'img/gecko.png' %}" alt="">
+                    <img class="uni-swap" src="{% static 'img/parceiros_etherscan.png' %}" alt="">
+                </div>
+            </div>
+        </section>
+        <!-- -------------- ABOUT US --------------------- -->
+        <section class="section-padding">
+            <div class="max-width-container">
+                <div class="about-container-max">
+                    <H5 class='about'>ABOUT US</H5>
+                    <h1>What is YFortress? </h1>
+                    <p class="about-info">
+                        Yearn Fortress is venture capital which empowering the decentralized interest free
+                        financial ecosystem, controlled by large financial institutions. Not
+                        anymore. Decentralized technology has taken the ledger public
+                        and yields are higher than ever before. Join the revolution and start your own
+                        financial
+                        liberation today.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- --------TOKEN SECTION--------------- -->
+        <section class="section-padding" id="token-distrubtion">
+            <div class="max-width-container">
+                <div class="token-dis">
+                    <h2>Tokenomics</h2>
+                    <canvas id="token-chart" width="240" style="width: 150px; height: 150px;" height="240"></canvas>
+                    <ul class="token-bullets">
+                        <li>
+                            <span></span>
+                            80% Distributed to Community Through Pre-Sale
+                        </li>
+                        <li>
+                            <span></span>
+                            10% Founders and Team
+                        </li>
+                        <li>
+                            <span></span>
+                            5% Marketing and Advertising
+                        </li>
+                        <li>
+                            <span></span>
+                            5% Private Sale - Soldout!
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- -------------------------ROAD  MAP --------------------- -->
+        <section id="road-map" class="section-padding">
+            <div class="max-width-container">
+                <div class="rm-inner-container">
+                    <h3>ROAD MAP</h3>
+                    <ul class="rm-details-outter">
+                        <div class="rm-details-innner">
+                            <i class="fas fa-project-diagram fa-2x"></i>
+                            <h3>Q4 2020</h3>
+                            <div class='rm-details-section'>
+                                <li>Project Conceptualization of YFortress</li>
+                                <li>Core Team Formation</li>
+                            </div>
+                        </div>
+                        <div class="rm-details-innner">
+                            <i class="fas fa-globe fa-2x"></i>
+                            <h3>Q1 2021</h3>
+                            <div class='rm-details-section'>
+
+                                <li>Website and Whitepaper Building</li>
+                                <li>Community Building</li>
+                                <li>Initial Partnerships</li>
+                            </div>
+                        </div>
+                        <div class="rm-details-innner">
+                            <i class="fas fa-link fa-2x"></i>
+                            <h3>Q2 2021</h3>
+                            <div class='rm-details-section'>
+                                <li>Private and Pre Sale</li>
+                                <li>YFortress Airdrops</li>
+                                <li>Technical whitepaper</li>
+                            </div>
+                        </div>
+                        <div class="rm-details-innner">
+                            <i class="fab fa-connectdevelop fa-2x"></i>
+                            <h3>Q3 2021</h3>
+                            <div class='rm-details-section'>
+                                <li>Release time-based native staking pool</li>
+                                <li>Begin decentralized governance protocol on the YFRS network</li>
+                                <li>Contract connection with web platform</li>
+                            </div>
+                        </div>
+                        <div class="rm-details-innner">
+                            <i class="far fa-paper-plane fa-2x"></i>
+                            <h3>Q4 2021</h3>
+                            <div class='rm-details-section'>
+                                <li>Website Improvements</li>
+                                <li>YFortress destop app (GUI) launch</li>
+                                <li>YFortress listed on CoinGecko</li>
+                            </div>
+                        </div>
+                        <div class="rm-details-innner">
+                            <i class="fas fa-ellipsis-h fa-2x"></i>
+                            <h3>Q4 2021</h3>
+                            <div class='rm-details-section'>
+                                <li>Uniswap Listing</li>
+                                <li>YFortress started trading on HOTBIT.</li>
+                                <li>YFortress Listed on LATOKEN</li>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+        </section>
+        <!-- ------------- CONTACT US ------------- -->
+        <section id="contact" class="section-padding">
+            <div class="max-width-container">
+                <div class="contact-container">
+                    <div class='team-outer-container'>
+                        <h1>TEAM PLAYERS</h1>
+                        <div class='team-in-container'>
+                            <div class="team-col">
+                                <img src="{% static 'img/t1.png' %}" alt="">
+                                <h4>Jan Anatoly</h4>
+                                <h4>Smart Contract Dev</h4>
+                            </div>
+                            <div class="team-col">
+                                <img src="{% static 'img/t2.png' %}" alt="">
+                                <h4>Alex Wong</h4>
+                                <h4>Front-end Developer</h4>
+                            </div>
+
+                            <div class="team-col">
+                                <img src="{% static 'img/t3.png' %}" alt="">
+                                <h4>Kelvin Moore</h4>
+                                <h4>Back-end Developer</h4>
+                            </div>
+                            <div class="team-col">
+                                <img src="{% static 'img/t4.png' %}" alt="">
+                                <h4>Sam Wright Moore</h4>
+                                <h4>Back-end Developer</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <form id="form-container">
+                        {% csrf_token %}
+                        <div class='form-banner'>
+                            <H2 class='contact-msg'>CONTACT US</H2>
+                            <p>Want to get in touch? Just drop us a message</p>
+                        </div>
+
+                        <div class="form-user-col">
+                            <div class="form-name-area">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name">
+                            </div>
+
+                            <div class="form-email-area">
+                                <label for="email">Your Email</label>
+                                <input type="text" id="email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-send-off">
+                            <label for="lname">Your Message</label>
+                            <textarea id="message-box" cols="30" rows="8"></textarea>
+                            <div id="successful">
+                                <button class="send" type="submit">SEND<img src="{% static 'img/arrow.png' %}"
+                                        alt=""></button>
+                                <div id="success-box">
+                                    <p id="message">We have<Strong>successfully</Strong> received your message.
+                                        We'll get
+                                        back to you soon.
+                                    </p>
+                                    <li class="fa fa-times" aria-hidden="true" alt="" id="image-close"></li>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+{% endblock contentarea %}
