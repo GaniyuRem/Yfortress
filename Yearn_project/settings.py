@@ -64,16 +64,14 @@ WSGI_APPLICATION = 'Yearn_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-# DB_USER = 'my_user'
-# DB_PWD = 'my_pwd'
 
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('DB_NAME'),
-        'USER': env('DB_USER_NAME'),
-        'PASSWORD': env('DB_PASSWORD'),
+        'NAME': env.get_value('DB_NAME'),
+        'USER': env.get_value('DB_USER_NAME'),
+        'PASSWORD': env.get_value('DB_PASSWORD'),
     }
 }
 
