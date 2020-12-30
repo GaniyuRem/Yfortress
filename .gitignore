@@ -139,7 +139,6 @@ cython_debug/
 
 
 # My file Ignore
-.vscode
+vscode
 Project_venv
-/Yearn_project/__pycache__
-/Yearn_finance/__pycache__
+**/__pycache__
