@@ -16,19 +16,22 @@ import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+# environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 env = environ.Env()
 env.read_env(".env")
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env.get_value("DJANGO_SECRET_KEY")
+# SECRET_KEY = env.get_value("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = []
+SECRET_KEY = env.get_value('DJANGO_SECRET_KEY')
+ALLOWED_HOSTS = [env.get_value('DJANGO_ALLOWED_HOSTS')]
+DEBUG = env.get_value('DJANGO_DEBUG')
 
 
 # Application definition
@@ -76,13 +79,13 @@ WSGI_APPLICATION = 'Yearn_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-env.get_value("DB_USER_NAME")
+# env.get_value("DB_USER_NAME")
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env.get_value("DB_NAME"),
-        'USER': env.get_value("DB_USER_NAME"),
-        'PASSWORD': env.get_value("DB_PASSWORD"),
+        'NAME': env("DB_NAME"),
+        'USER': env("DB_USER_NAME"),
+        'PASSWORD': env("DB_PASSWORD"),
     }
 }
 
