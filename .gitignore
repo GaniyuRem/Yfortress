@@ -140,6 +140,6 @@ cython_debug/
 
 # My file Ignore
 vscode
-Project_venv
+/Users/ganiyu/Desktop/Yearn_fortress/Project_venv
 **/__pycache__
 apple.txt
