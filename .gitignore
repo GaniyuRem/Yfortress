@@ -143,3 +143,4 @@ cython_debug/
 /Project_venv
 **/__pycache__
 Yeran_finance/migrations
+Procfile
