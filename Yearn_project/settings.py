@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 """
 Django settings for Yearn_project project.
 
@@ -21,10 +22,22 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 env = environ.Env()
 env.read_env(".env")
+=======
+from pathlib import Path
+import os
+import django_heroku
+import environ
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+env = environ.Env(SECRET_KEY=str,)
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+>>>>>>> b828d8e30ae34c335fc9150203a66c373a50b557
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+<<<<<<< HEAD
 # SECRET_KEY = env.get_value("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -32,6 +45,14 @@ env.read_env(".env")
 SECRET_KEY = env.get_value('DJANGO_SECRET_KEY')
 ALLOWED_HOSTS = [env.get_value('DJANGO_ALLOWED_HOSTS')]
 DEBUG = env.get_value('DJANGO_DEBUG')
+=======
+SECRET_KEY = env('DJANGO_SECRET_KEY')
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = env('DJANGO_DEBUG')
+
+ALLOWED_HOSTS = [env('DJANGO_ALLOWED_HOSTS')]
+>>>>>>> b828d8e30ae34c335fc9150203a66c373a50b557
 
 
 # Application definition
@@ -79,6 +100,7 @@ WSGI_APPLICATION = 'Yearn_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+<<<<<<< HEAD
 # env.get_value("DB_USER_NAME")
 DATABASES = {
     'default': {
@@ -89,6 +111,22 @@ DATABASES = {
     }
 }
 
+=======
+# DB_USER = 'my_user'
+# DB_PWD = 'my_pwd'
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'yearn_project',
+        'USER': os.environ['DB_USER'],
+        'PASSWORD': os.environ['DB_PWD'],
+    }
+}
+
+
+>>>>>>> b828d8e30ae34c335fc9150203a66c373a50b557
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -125,6 +163,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+<<<<<<< HEAD
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 django_on_heroku.settings(locals())
+=======
+STATIC_ROOT = os.path.join(BASE_DIR,"staticfiles")
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+print("hello", STATICFILES_DIRS)
+django_heroku.settings(locals())
+>>>>>>> b828d8e30ae34c335fc9150203a66c373a50b557

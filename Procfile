@@ -1,0 +1,1 @@
+web: gunicorn Yearn_project.wsgi
