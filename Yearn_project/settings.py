@@ -12,15 +12,18 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import environ
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+env = environ.Env()
+env.read_env(".env")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 't@3qkat1gpo!32u(#!9_2d79rh2@m!k68(+hi57d=a1lc*gr#7'
+SECRET_KEY = env.get_value("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -73,13 +76,13 @@ WSGI_APPLICATION = 'Yearn_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
+env.get_value("DB_USER_NAME")
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'yearn_project',
-        'USER': 'postgres',
-        'PASSWORD': 'Candy4life',
+        'NAME': env.get_value("DB_NAME"),
+        'USER': env.get_value("DB_USER_NAME"),
+        'PASSWORD': env.get_value("DB_PASSWORD"),
     }
 }
 
