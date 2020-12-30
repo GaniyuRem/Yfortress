@@ -139,7 +139,7 @@ cython_debug/
 
 
 # My file Ignore
-vscode
-/Users/ganiyu/Desktop/Yearn_fortress/Project_venv
+/.vscode
+/Project_venv
 **/__pycache__
-apple.txt
+/apple.txt
