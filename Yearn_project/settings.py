@@ -71,9 +71,9 @@ WSGI_APPLICATION = 'Yearn_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ['DB_NAME'],
-        'USER': os.environ['DB_USER_NAME'],
-        'PASSWORD': os.environ['DB_PASSWORD'],
+        'NAME': env('DB_NAME'),
+        'USER': env('DB_USER_NAME'),
+        'PASSWORD': env('DB_PASSWORD'),
     }
 }
 
