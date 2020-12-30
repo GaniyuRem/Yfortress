@@ -1,10 +1,7 @@
-<<<<<<< HEAD
 window.addEventListener("load", function () {
     const loader = document.querySelector(".loader");
     loader.className += " hidden";
 });
-=======
->>>>>>> b828d8e30ae34c335fc9150203a66c373a50b557
 $(document).ready(function () {
     $successful = $("#success-box")
     input_field = $(" #form-container").find("input,textarea")
@@ -16,15 +13,10 @@ $(document).ready(function () {
             value_pro.push($(value).val())
         });
         $.ajax({
-<<<<<<< HEAD
-=======
-
->>>>>>> b828d8e30ae34c335fc9150203a66c373a50b557
             type: "POST",
             data: { csrfmiddlewaretoken: value_pro[0], name: value_pro[1], email: value_pro[2], message_box: value_pro[3] },
             success: (data, responseText, request) => {
                 if (request.status == 200) {
-<<<<<<< HEAD
                     $successful.css({ "display": "flex" })
                     $successful.toggle(1000, () => {
                         $successful.css({ "display": "flex", "transition": "0.5" })
@@ -43,24 +35,6 @@ $(document).ready(function () {
             });
         }
     })
-=======
-                    console.log(request.status, data)
-                }
-            },
-            error: () => {
-                console.log("error")
-            }
-        });
-        $successful.css({ "display": "flex" })
-        $successful.toggle(1000, () => {
-            $successful.css({ "display": "flex", "transition": "0.5" })
-        })
-        $("#image-close").on('click', function (event) {
-            $(this).parent().css('display', "none")
-        })
-    });
-
->>>>>>> b828d8e30ae34c335fc9150203a66c373a50b557
 
     var liTag = $(".top-links li")
     console.log(liTag.length)
@@ -83,29 +57,17 @@ $(document).ready(function () {
         }
         else if ($(this).attr("id") == "road-about") {
             $("html,body").animate({
-<<<<<<< HEAD
                 scrollTop: $("#key-style").offset().top, scroll: "smooth"
-=======
-                scrollTop: $("#key-style").offset().top - 160, scroll: "smooth"
->>>>>>> b828d8e30ae34c335fc9150203a66c373a50b557
             }, 500)
         }
         else if ($(this).attr("id") == "road-map-link") {
             $("html,body").animate({
-<<<<<<< HEAD
                 scrollTop: $("#road-map").offset().top - -90, scroll: "smooth"
-=======
-                scrollTop: $("#road-map").offset().top - 90, scroll: "smooth"
->>>>>>> b828d8e30ae34c335fc9150203a66c373a50b557
             }, 600)
         }
         else if ($(this).attr("id") == "contact-map") {
             $("html,body").animate({
-<<<<<<< HEAD
                 scrollTop: $("#contact").offset().top - -30
-=======
-                scrollTop: $("#contact").offset().top
->>>>>>> b828d8e30ae34c335fc9150203a66c373a50b557
                 , scroll: "smooth"
             }, 800)
         }
@@ -113,16 +75,11 @@ $(document).ready(function () {
         if (prevDiv) {
             prevDiv.style.color = "";
             console.log(prevDiv)
-<<<<<<< HEAD
-=======
-
->>>>>>> b828d8e30ae34c335fc9150203a66c373a50b557
         }
         target.style.color = "#00A86B";
         prevDiv = target;
         console.log(prevDiv)
     }
-<<<<<<< HEAD
     var ctx = $("#token-chart")[0]
     var myChart = new Chart(ctx, {
         type: 'doughnut',
@@ -148,19 +105,4 @@ $(document).ready(function () {
     });
 })
 
-=======
-    // if (window.screenY >= 20) {
-    //     console.log(true)
-    //     $("header").addClass("scrolling-active");
-    // }
-})
-
-//     .on("load", function () {
-//     if (window.screenY >= 20) {
-//         console.log(true)
-//         $("header").addClass("scrolling-active");
-//     }
-// })
-
->>>>>>> b828d8e30ae34c335fc9150203a66c373a50b557
 

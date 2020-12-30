@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> b828d8e30ae34c335fc9150203a66c373a50b557
 from django.shortcuts import render
 from django.shortcuts import HttpResponse
 from django.http import JsonResponse
@@ -17,7 +13,6 @@ from django.views.decorators.csrf import csrf_exempt
 def index(request):
     if request.method == "POST":
         print(request.POST)
-<<<<<<< HEAD
         full_name = request.POST.get("name")
         email = request.POST.get("email")
         message = request.POST.get("message_box")
@@ -26,8 +21,3 @@ def index(request):
         return JsonResponse({"result": "success", "message": "We have <Strong> successfully </Strong> received your message. We'll get back to you soon."})
     else:
         return render(request, 'index.html')
-=======
-        return JsonResponse({"result": "success", "message": "We have <Strong> successfully </Strong> received your message. We'll get back to you soon."})
-    else:
-        return render(request, 'base.html')
->>>>>>> b828d8e30ae34c335fc9150203a66c373a50b557

@@ -25,11 +25,7 @@
             }
         },
         "size": {
-<<<<<<< HEAD
             "value": 2,
-=======
-            "value": 5,
->>>>>>> b828d8e30ae34c335fc9150203a66c373a50b557
             "random": false,
             "anim": {
                 "enable": false,
@@ -56,11 +52,7 @@
                 "mode": "repulse"
             },
             "onclick": {
-<<<<<<< HEAD
                 "enable": false,
-=======
-                "enable": true,
->>>>>>> b828d8e30ae34c335fc9150203a66c373a50b557
                 "mode": "push"
             }
         },
