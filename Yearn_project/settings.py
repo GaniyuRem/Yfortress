@@ -7,7 +7,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 env = environ.Env(SECRET_KEY=str,)
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -15,7 +14,7 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = env('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DJNAGO_DEBUG = env('DJANGO_DEBUG')
+DEBUG = env('DJANGO_DEBUG')
 
 ALLOWED_HOSTS = [env('DJANGO_ALLOWED_HOSTS')]
 
@@ -62,16 +61,19 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Yearn_project.wsgi.application'
 
+
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+# DB_USER = 'my_user'
+# DB_PWD = 'my_pwd'
 
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "env.get_value('DB_NAME')",
-        'USER': "env.get_value('DB_USER_NAME')",
-        'PASSWORD': "env.get_value('DB_PASSWORD')",
+        'NAME': os.environ['DB_NAME'],
+        'USER': os.environ['DB_USER_NAME'],
+        'PASSWORD': os.environ['DB_PASSWORD'],
     }
 }
 
@@ -115,4 +117,5 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+print("hello", STATICFILES_DIRS)
 django_on_heroku.settings(locals())
