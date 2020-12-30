@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import include
-from Yearn_finance import views
+
 urlpatterns = [
     path("", include("Yearn_finance.urls")),
     path('admin/', admin.site.urls),
