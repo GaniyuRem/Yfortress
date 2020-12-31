@@ -70,9 +70,6 @@ WSGI_APPLICATION = 'Yearn_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-# DB_USER = 'my_user'
-# DB_PWD = 'my_pwd'
-
 
 # DATABASES = {
 #     'default': {
