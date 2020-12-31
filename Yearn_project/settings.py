@@ -17,12 +17,12 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 # DEBUG = env('DJANGO_DEBUG')
 
 # ALLOWED_HOSTS = [env('DJANGO_ALLOWED_HOSTS')]
-SECRET_KEY = env.get_value('DJANGO_SECRET_KEY')
-
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+print(SECRET_KEY)
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.get_value('DJANGO_DEBUG')
+DEBUG = os.environ.get('DJANGO_DEBUG')
 
-ALLOWED_HOSTS = [env('DJANGO_ALLOWED_HOSTS')]
+ALLOWED_HOSTS = [os.environ.get('DJANGO_ALLOWED_HOSTS')]
 
 
 # Application definition
@@ -87,9 +87,9 @@ WSGI_APPLICATION = 'Yearn_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env.get_value('DB_NAME'),
-        'USER': env.get_value('DB_USER_NAME'),
-        'PASSWORD': env.get_value('DB_PASSWORD'),
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER_NAME'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
     }
 }
 
