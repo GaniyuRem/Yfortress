@@ -47,7 +47,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Yearn_project.urls'
-
+os.path.join(__file__, 'Templates')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -63,6 +63,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'Yearn_project.wsgi.application'
 
