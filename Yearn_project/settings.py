@@ -11,10 +11,16 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('DJANGO_SECRET_KEY')
+# SECRET_KEY = env('DJANGO_SECRET_KEY')
+
+# # SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = env('DJANGO_DEBUG')
+
+# ALLOWED_HOSTS = [env('DJANGO_ALLOWED_HOSTS')]
+SECRET_KEY = env.get_value('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DJANGO_DEBUG')
+DEBUG = env.get_value('DJANGO_DEBUG')
 
 ALLOWED_HOSTS = [env('DJANGO_ALLOWED_HOSTS')]
 
@@ -68,12 +74,22 @@ WSGI_APPLICATION = 'Yearn_project.wsgi.application'
 # DB_PWD = 'my_pwd'
 
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': env('DB_NAME'),
+#         'USER': env('DB_USER_NAME'),
+#         'PASSWORD': env('DB_PASSWORD'),
+#     }
+# }
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('DB_NAME'),
-        'USER': env('DB_USER_NAME'),
-        'PASSWORD': env('DB_PASSWORD'),
+        'NAME': env.get_value('DB_NAME'),
+        'USER': env.get_value('DB_USER_NAME'),
+        'PASSWORD': env.get_value('DB_PASSWORD'),
     }
 }
 
