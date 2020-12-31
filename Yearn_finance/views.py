@@ -19,5 +19,5 @@ def index(request):
         Contact.objects.create(
             full_name=full_name, email=email, message=message).save()
         return JsonResponse({"result": "success", "message": "We have <Strong> successfully </Strong> received your message. We'll get back to you soon."})
-    else:
-        return render(request, 'index.html')
+
+    return render(request, 'index.html')
