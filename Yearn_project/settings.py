@@ -47,10 +47,13 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Yearn_project.urls'
+
+BASE_DIR1 = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR1, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -63,7 +66,7 @@ TEMPLATES = [
     },
 ]
 
-print(BASE_DIR)
+print(BASE_DIR1)
 
 WSGI_APPLICATION = 'Yearn_project.wsgi.application'
 
