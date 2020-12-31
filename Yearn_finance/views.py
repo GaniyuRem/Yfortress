@@ -10,7 +10,7 @@ from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 
-def index(request):
+def homepage(request):
     if request.method == "POST":
         print(request.POST)
         full_name = request.POST.get("name")
@@ -20,4 +20,4 @@ def index(request):
             full_name=full_name, email=email, message=message).save()
         return JsonResponse({"result": "success", "message": "We have <Strong> successfully </Strong> received your message. We'll get back to you soon."})
 
-    return render(request, 'index.html')
+    return render(request, 'homepage.html')
