@@ -171,7 +171,7 @@ label {
   transition: all 0.3s;
   display: flex;
   align-items: center;
-  width: 100px;
+  width: 155px;
   justify-content: space-between;
 }
 .top-link-logo li:nth-child(1) img {
@@ -261,7 +261,7 @@ label {
     display: none;
   }
   .top-link-logo {
-    width: 130px;
+    width: 280px;
   }
   .top-link-logo li:nth-child(1) img {
         width: 45px;
@@ -448,9 +448,6 @@ label {
 @media screen and (min-width: 768px) {
   .key-feature-info {
     flex-basis: 1400px;
-  }
-  .section-padding {
-    padding: 2rem;
   }
   .main-feature-banner {
     max-width: 24%;
