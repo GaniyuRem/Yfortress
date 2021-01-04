@@ -36,8 +36,56 @@ $(document).ready(function () {
         }
     })
 
+    const openModalButtons = document.querySelectorAll('[data-modal-target]')
+    const closeModalButtons = document.querySelectorAll('[data-close-button]')
+    const overlay = document.getElementById('overlay')
+
+    openModalButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const modal = document.querySelector(button.dataset.modalTarget)
+            openModal(modal)
+        })
+    })
+
+    overlay.addEventListener('click', () => {
+        const modals = document.querySelectorAll('.modal.active')
+        modals.forEach(modal => {
+            closeModal(modal)
+        })
+    })
+
+    closeModalButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const modal = button.closest('.modal')
+            closeModal(modal)
+        })
+    })
+
+    function openModal(modal) {
+        if (modal == null) return
+        modal.classList.add('active')
+        overlay.classList.add('active')
+    }
+
+    function closeModal(modal) {
+        if (modal == null) return
+        modal.classList.remove('active')
+        overlay.classList.remove('active')
+    }
+
+    $(".key-style-title-img").on("click", 'img', function () {
+        openModal(modal)
+    })
+
+    $("#lnh").on("click", function () {
+        openModal(modal)
+    })
+    $(".buy-defi-title").on("click", function (event) {
+        event.preventDefault()
+        openModal(modal)
+    })
+
     var liTag = $(".top-links li")
-    console.log(liTag.length)
     for (var i = 0; i < liTag.length; i++) {
         if (liTag[i].tagName == "LI" || liTag[i].tagName == "li") {
             if (liTag[i].addEventListener) {
@@ -74,35 +122,12 @@ $(document).ready(function () {
         var target = event.target
         if (prevDiv) {
             prevDiv.style.color = "";
-            console.log(prevDiv)
+
         }
         target.style.color = "#00A86B";
         prevDiv = target;
-        console.log(prevDiv)
-    }
-    var ctx = $("#token-chart")[0]
-    var myChart = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-            labels: ["80% Distibuted to community", "10% founders and teams", "W", "T"],
-            datasets: [{
-                backgroundColor: [
-                    "#34495e",
-                    "#D4CCC5",
-                    "#f1c40f",
-                    "#949FB1"
-                ],
-                data: [80, 10, 5, 5]
-            }]
-        },
-        options: {
-            responsive: false,
-            maintainAspectRatio: true,
-            cutoutPercentage: 70,
-            legend: { display: false }
-        },
 
-    });
+    }
 })
 
 
